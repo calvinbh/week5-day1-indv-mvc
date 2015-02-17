@@ -1,0 +1,31 @@
+﻿@model List<week5_day1_indv.Models.Animal>
+
+<div class="jumbotron">
+    <h1>Pet Adoption Agency</h1>
+    <p class="lead">Come adopt a new fury friend!</p>
+</div>
+
+@Html.ActionLink("Dogs", "Dogs", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Cats", "Cats", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Birds", "Birds", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Others", "Others", null, new { @class = "btn btn-primary" })
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+@foreach (var animal in Model)
+{
+    <tbody>
+        <tr>
+            <td>@animal.Name</td>
+            <td>@animal.Age</td>
+        </tr>
+    </tbody>
+}
+
+</table>

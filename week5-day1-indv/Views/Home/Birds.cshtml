@@ -1,0 +1,26 @@
+﻿@model List<week5_day1_indv.Models.Bird>
+
+@Html.ActionLink("Cats", "Cats", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Dogs", "Dogs", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Others", "Others", null, new { @class = "btn btn-primary" })
+
+<h2>Birds</h2>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    @foreach (var animal in Model)
+    {
+        <tbody>
+            <tr>
+                <td>@animal.Name</td>
+                <td>@animal.Age</td>
+            </tr>
+        </tbody>
+    }
+
+</table>
