@@ -81,5 +81,17 @@ namespace week5_day1_indv.Controllers
             }
             return View(model);
         }
+
+        public ActionResult DeleteAnimal(int id = -1)
+        {
+            if (id == -1) return RedirectToAction("Index");
+
+            if (db.Animals.Any(x => x.ID == id))
+            {
+                Animal animal = db.Animals.Where(x => x.ID == id).FirstOrDefault();
+                db.Animals.Remove(animal);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

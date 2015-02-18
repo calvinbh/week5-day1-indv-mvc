@@ -16,6 +16,7 @@
         <tr>
             <th>Name</th>
             <th>Age</th>
+            <th>Delete</th>
         </tr>
     </thead>
 @foreach (var animal in Model)
@@ -24,6 +25,7 @@
         <tr>
             <td>@animal.Name</td>
             <td>@animal.Age</td>
+            <td>@Html.ActionLink("Delete", "DeleteAnimal", new { id = animal.ID }, new { @class = "btn btn-danger" })</td>
         </tr>
     </tbody>
 }
